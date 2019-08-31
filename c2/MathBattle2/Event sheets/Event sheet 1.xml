@@ -35,6 +35,10 @@
                         <action id="0" name="Set text" sid="935132533921269" type="PlayerAnswerTxt">
                             <param id="0" name="Text">&quot;&quot;</param>
                         </action>
+                        <action id="-10" name="Set value" sid="120111146176427" type="MathProblem">
+                            <param id="0" name="Instance variable">CurrAnswerDigitPos</param>
+                            <param id="1" name="Value">-1</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="723835153109180">
@@ -115,15 +119,65 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="1" name="Append text" sid="416054420158217" type="MathProblem">
-                            <param id="0" name="Text">Function.Param(1)</param>
+                        <action id="0" name="Set text" sid="416054420158217" type="PlayerAnswerTxt">
+                            <param id="0" name="Text">Function.Param(1) &amp; PlayerAnswerTxt.Text</param>
                         </action>
-                        <action id="-11" name="Add to" sid="349566014926192" type="MathProblem">
+                        <action id="-10" name="Set value" sid="349566014926192" type="MathProblem">
                             <param id="0" name="Instance variable">PlayerAnswer</param>
-                            <param id="1" name="Value">Function.Param(1) + ( 10 ^ len(str(MathProblem.CurrRandNum)))</param>
+                            <param id="1" name="Value">int(PlayerAnswerTxt.Text)</param>
                         </action>
-                        <action id="0" name="Set text" sid="649770271492805" type="PlayerAnswerTxt">
-                            <param id="0" name="Text">MathProblem.PlayerAnswer</param>
+                        <action id="-11" name="Add to" sid="798656246672961" type="MathProblem">
+                            <param id="0" name="Instance variable">CurrAnswerDigitPos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="962744366662712">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="324520052915523" type="MathProblem">
+                                    <param id="0" name="Instance variable">Answer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">MathProblem.PlayerAnswer</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="777374437737738" type="Sprite">
+                                    <param id="0" name="Object">Sprite2</param>
+                                    <param id="1" name="Layer">0</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-22" name="Set angle toward position" sid="620229653503383" type="Sprite2">
+                                    <param id="0" name="X">600</param>
+                                    <param id="1" name="Y">Sprite.Y</param>
+                                </action>
+                                <action id="0" name="Call function" sid="405102803654537" type="Function">
+                                    <param id="0" name="Name">&quot;CreateProblem&quot;</param>
+                                    <param id="1" name="Parameter {n}">Function.Param(0)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="894082182375711">
+            <conditions>
+                <condition id="7" name="On any key released" sid="130540691355649" type="Keyboard" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="739009863300225">
+                    <conditions>
+                        <condition id="-21" name="Is between values" sid="615424289391928" type="System">
+                            <param id="0" name="Value">Keyboard.LastKeyCode</param>
+                            <param id="1" name="Lower bound">48</param>
+                            <param id="2" name="Upper bound">57</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Call function" sid="912660393663544" type="Function">
+                            <param id="0" name="Name">&quot;NumberEntered&quot;</param>
+                            <param id="1" name="Parameter {n}">1{###}Keyboard.LastKeyCode - 48</param>
                         </action>
                     </actions>
                 </event-block>
