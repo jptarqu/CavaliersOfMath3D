@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Math Battle 2</name>
+    <description></description>
+    <version>2.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2l8814isz6fie</unique-id>
+    <saved-with-version>27100</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors />
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Construct 2 splash</prop>
+        <prop name="Orientations">Any</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preload sounds">Yes</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="MathProblem" sid="725958777975081">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="Answer" sid="675762162797592" type="number" />
+                <instance-variable name="PlayerNum" sid="252462801889026" type="number" />
+                <instance-variable name="NumNumbers" sid="740285134926746" type="number" />
+                <instance-variable name="CurrRandNum" sid="681762002038009" type="number" />
+                <instance-variable name="PlayerAnswer" sid="475503383424610" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Function" sid="422466928688450">
+            <plugin id="Function" />
+        </object-type>
+        <object-type global="1" name="Array" sid="101165586428391">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="PlayerAnswerTxt" sid="558464647387266">
+            <plugin id="Text" />
+            <instance-variables>
+                <instance-variable name="PlayerNum" sid="963768066609365" type="number" />
+            </instance-variables>
+        </object-type>
+        <object-type name="Keyboard" sid="761903633332929">
+            <plugin id="Keyboard" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Function" uid="2" />
+        <global-instance type="Keyboard" uid="6" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="429930000207266">
+            <conditions>
+                <condition id="0" name="On function" sid="530167564900207" type="Function">
+                    <param id="0" name="Name">&quot;CreateProblem&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="111538951980432">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="734889271711268" type="MathProblem">
+                            <param id="0" name="Instance variable">PlayerNum</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="224395110464841" type="PlayerAnswerTxt">
+                            <param id="0" name="Instance variable">PlayerNum</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="813578773558049" type="MathProblem">
+                            <param id="0" name="Instance variable">Answer</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="323459652769558" type="MathProblem">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="935132533921269" type="PlayerAnswerTxt">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="723835153109180">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="842837478828446" type="System">
+                                    <param id="0" name="Count">MathProblem.NumNumbers</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="410332749904091" type="MathProblem">
+                                    <param id="0" name="Instance variable">CurrRandNum</param>
+                                    <param id="1" name="Value">ceil(random(100) )</param>
+                                </action>
+                                <action id="-11" name="Add to" sid="816778320431664" type="MathProblem">
+                                    <param id="0" name="Instance variable">Answer</param>
+                                    <param id="1" name="Value">MathProblem.CurrRandNum</param>
+                                </action>
+                                <action id="1" name="Append text" sid="262176768064260" type="MathProblem">
+                                    <param id="0" name="Text">MathProblem.CurrRandNum &amp; newline &amp; &quot; + &quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="756749054476414">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="408117145141270" type="System">
+                                    <param id="0" name="First value">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="140790857938995" type="MathProblem">
+                                    <param id="0" name="Text">left( MathProblem.Text, len(MathProblem.Text) -3 ) </param>
+                                </action>
+                                <action id="1" name="Append text" sid="714819832558929" type="MathProblem">
+                                    <param id="0" name="Text"> newline &amp; &quot; = &quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="583730175520358">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="714966839930600" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Call function" sid="260477890177540" type="Function">
+                    <param id="0" name="Name">&quot;CreateProblem&quot;</param>
+                    <param id="1" name="Parameter {n}">1</param>
+                </action>
+                <action id="0" name="Call function" sid="572721499084761" type="Function">
+                    <param id="0" name="Name">&quot;CreateProblem&quot;</param>
+                    <param id="1" name="Parameter {n}">2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="798295779467845">
+            <conditions>
+                <condition id="0" name="On function" sid="200376993512179" type="Function">
+                    <param id="0" name="Name">&quot;NumberEntered&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="629988625904034">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="152258987096847" type="MathProblem">
+                            <param id="0" name="Instance variable">PlayerNum</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="669316041620252" type="PlayerAnswerTxt">
+                            <param id="0" name="Instance variable">PlayerNum</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">Function.Param(0)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="1" name="Append text" sid="416054420158217" type="MathProblem">
+                            <param id="0" name="Text">Function.Param(1)</param>
+                        </action>
+                        <action id="-11" name="Add to" sid="349566014926192" type="MathProblem">
+                            <param id="0" name="Instance variable">PlayerAnswer</param>
+                            <param id="1" name="Value">Function.Param(1) + ( 10 ^ len(str(MathProblem.CurrRandNum)))</param>
+                        </action>
+                        <action id="0" name="Set text" sid="649770271492805" type="PlayerAnswerTxt">
+                            <param id="0" name="Text">MathProblem.PlayerAnswer</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
